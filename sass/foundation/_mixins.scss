@@ -1,18 +1,23 @@
 // mixin
 @mixin breakpoint( $point ) {
+	@if $point == sp {
+		@media ( max-width: 415px ) {
+			@content ;
+		}
+	}
 	@if $point == tablet {
-		@media ( min-width: 641px ) {
+		@media ( min-width: 416px ) {
 			@content ;
 		}
 	}
 	@if $point == pc {
-		@media ( min-width: 769px ) {
+		@media ( min-width: 768px ) {
 			@content ;
 		}
 	}
-	@if $point == wide {
-		@media ( min-width: 961px ) {
+	/* @if $point == wide {
+		@media ( min-width: 1025px ) {
 			@content ;
 		}
-	}
+	} */
 }

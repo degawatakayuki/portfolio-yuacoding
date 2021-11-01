@@ -1,0 +1,449 @@
+@charset "UTF-8";
+/* A Modern CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ブレークポイント */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.inner {
+  width: 95%;
+  margin: 0 auto;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  .inner {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner {
+    width: 90%;
+    max-width: 1280px;
+  }
+}
+
+body {
+  font: normal normal bold 12px/21px Noto Sans JP;
+  color: #333333;
+  letter-spacing: 0px;
+  opacity: 1;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  body {
+    font: normal normal bold 16px/28px Noto Sans JP;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font: normal normal bold 16px/28px Noto Sans JP;
+  }
+}
+
+body h1 {
+  font: normal normal bold 24px/32px Noto Sans JP;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  body h1 {
+    font: normal normal bold 32px/43px Noto Sans JP;
+  }
+}
+
+body h2 {
+  font: normal normal bold 20px/30px Noto Sans JP;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  body h2 {
+    font: normal normal bold 30px/41px Noto Sans JP;
+  }
+}
+
+body h3 {
+  font: normal normal bold 18px/26px Noto Sans JP;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  body h3 {
+    font: normal normal bold 28px/37px Noto Sans JP;
+  }
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 99;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header {
+    height: 94px;
+  }
+}
+
+header .header-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+header .header-flex .logo {
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 100%;
+}
+
+header .header-flex .logo img {
+  display: inline-block;
+  width: 30px;
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+header .header-flex .header-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  /* top: 70px; */
+  top: 50px;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+  width: 100%;
+  margin-left: -3%;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin-top: 4px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header .header-flex .header-nav {
+    margin-top: 27px;
+    margin-left: -5%;
+  }
+}
+
+@media (min-width: 768px) {
+  header .header-flex .header-nav {
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 30px;
+    margin-top: 0;
+  }
+}
+
+header .header-flex .header-nav li {
+  height: 50px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  header .header-flex .header-nav li {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+header .header-flex .header-nav li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  line-height: 50px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  header .header-flex .header-nav li a {
+    line-height: 30px;
+  }
+}
+
+header .header-flex .menu-open {
+  top: 70px;
+  opacity: 1;
+}
+
+header .header-flex .contact-form {
+  display: none;
+  background: transparent -webkit-gradient(linear, left top, right top, from(#FA41CC), to(#6020B0)) 0% 0% no-repeat padding-box;
+  background: transparent -webkit-linear-gradient(left, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  height: 37px;
+  font: normal normal normal 14px/19px Hiragino Kaku Gothic ProN;
+  color: #fff;
+  line-height: 37px;
+  text-align: center;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header .header-flex .contact-form {
+    display: inline-block;
+    width: 145px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  header .header-flex .contact-form {
+    width: 250px;
+  }
+}
+
+header .header-flex .hamburger-btn {
+  width: 56px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-right: 5%;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  text-align: center;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  header .header-flex .hamburger-btn {
+    display: none;
+  }
+}
+
+header .header-flex .hamburger-btn span {
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 11px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header .header-flex .hamburger-btn span {
+    left: 8px;
+  }
+}
+
+header .header-flex .hamburger-btn span:nth-child(1) {
+  top: 9px;
+}
+
+header .header-flex .hamburger-btn span:nth-child(2) {
+  top: 18px;
+}
+
+header .header-flex .hamburger-btn span:nth-child(3) {
+  top: 27px;
+}
+
+.p-mainvisual {
+  padding-top: 100px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,151 @@
+header {
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0px 3px 6px #00000029;
+
+    @include breakpoint(tablet) {
+        height: 94px;
+    }
+
+    .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .logo {
+            height: 30px;
+            font-size: 18px;
+            line-height: 30px;
+            width: 100%;
+
+            img {
+                display: inline-block;
+                width: 30px;
+                vertical-align: bottom;
+                margin-right: 5px;
+            }
+        }
+
+        .header-nav {            
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            /* top: 70px; */
+            top:50px;
+            height: 150px;
+            background-color: $white;
+            text-align: center;
+            width: 100%;
+            margin-left: -3%;
+            opacity: 0;
+            transition: .5s;
+            margin-top: 4px;
+
+            @include breakpoint(tablet) {
+                margin-top: 27px;
+                margin-left: -5%;
+            }
+
+            @include breakpoint(pc) {
+                position: static;
+                flex-direction: row;
+                height: 30px;
+                margin-top: 0;
+            }
+
+            li {
+                height: 50px;
+
+                @include breakpoint(pc) {
+                   width: 100px;
+                   height: 30px;
+                }
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    line-height: 50px;
+
+                    @include breakpoint(pc) {
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+
+        .menu-open {
+            top: 70px;
+            opacity: 1;
+        }
+
+        .contact-form {
+            display: none;
+            background: transparent linear-gradient(90deg, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 10px;
+            height: 37px;
+
+            font: normal normal normal 14px/19px Hiragino Kaku Gothic ProN;
+            color: $white;
+            line-height: 37px;
+            text-align: center;
+
+            @include breakpoint(tablet) {
+                display: inline-block;
+                width: 145px;
+                margin-right: 10px;
+            }
+            @include breakpoint(pc) {
+                width: 250px;
+            }
+        }
+
+        .hamburger-btn {
+            width: 56px;
+            height: 40px;
+            border: 1px solid rgba(0,0,0, .1);
+            border-radius: 5px;
+            margin-right: 5%;
+
+            position: relative;
+            cursor: pointer;
+            background: none;
+            text-align: center;
+
+            @include breakpoint(pc) {
+                display: none;
+            }
+
+            span {
+                display: block;
+                position: absolute;
+                width: 25px;
+                height: 3px;
+                border-radius: 2px;
+                background-color: rgba(0,0,0, .5);
+                position: absolute;
+                left: 11px;
+
+                @include breakpoint(tablet) {
+                    left: 8px;
+                }
+                
+                &:nth-child(1) {
+                    top: 9px;
+                }
+                &:nth-child(2) {
+                    top: 18px;
+                }
+                &:nth-child(3) {
+                    top: 27px;
+                }
+            }
+        }
+    }
+}
