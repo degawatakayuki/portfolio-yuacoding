@@ -124,82 +124,34 @@ li {
 @media (min-width: 768px) {
   .inner {
     width: 90%;
-    max-width: 1280px;
+    max-width: 1024px;
   }
 }
 
 body {
-  font: normal normal bold 12px/21px Noto Sans JP;
+  font: normal normal bold 16px/28px Noto Sans JP;
   color: #333333;
   letter-spacing: 0px;
   opacity: 1;
-  /* @if $point == wide {
-		@media ( min-width: 1025px ) {
-			@content ;
-		}
-	} */
-  /* @if $point == wide {
-		@media ( min-width: 1025px ) {
-			@content ;
-		}
-	} */
-}
+  /* @include breakpoint(tablet) {
+        font: normal normal bold 16px/28px Noto Sans JP;
+    }
 
-@media (min-width: 416px) {
-  body {
-    font: normal normal bold 16px/28px Noto Sans JP;
-  }
-}
-
-@media (min-width: 768px) {
-  body {
-    font: normal normal bold 16px/28px Noto Sans JP;
-  }
+    @include breakpoint(pc) {
+        font: normal normal bold 16px/28px Noto Sans JP;
+    } */
 }
 
 body h1 {
-  font: normal normal bold 24px/32px Noto Sans JP;
-  /* @if $point == wide {
-		@media ( min-width: 1025px ) {
-			@content ;
-		}
-	} */
-}
-
-@media (min-width: 416px) {
-  body h1 {
-    font: normal normal bold 32px/43px Noto Sans JP;
-  }
+  font: normal normal bold 32px/43px Noto Sans JP;
 }
 
 body h2 {
-  font: normal normal bold 20px/30px Noto Sans JP;
-  /* @if $point == wide {
-		@media ( min-width: 1025px ) {
-			@content ;
-		}
-	} */
-}
-
-@media (min-width: 416px) {
-  body h2 {
-    font: normal normal bold 30px/41px Noto Sans JP;
-  }
+  font: normal normal bold 30px/41px Noto Sans JP;
 }
 
 body h3 {
-  font: normal normal bold 18px/26px Noto Sans JP;
-  /* @if $point == wide {
-		@media ( min-width: 1025px ) {
-			@content ;
-		}
-	} */
-}
-
-@media (min-width: 416px) {
-  body h3 {
-    font: normal normal bold 28px/37px Noto Sans JP;
-  }
+  font: normal normal bold 28px/37px Noto Sans JP;
 }
 
 header {
@@ -210,6 +162,7 @@ header {
   z-index: 99;
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
+  background-color: #fff;
   /* @if $point == wide {
 		@media ( min-width: 1025px ) {
 			@content ;
@@ -244,6 +197,19 @@ header .header-flex .logo {
   font-size: 18px;
   line-height: 30px;
   width: 100%;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header .header-flex .logo {
+    height: 47px;
+    font-size: 24px;
+    line-height: 47px;
+  }
 }
 
 header .header-flex .logo img {
@@ -251,6 +217,17 @@ header .header-flex .logo img {
   width: 30px;
   vertical-align: bottom;
   margin-right: 5px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  header .header-flex .logo img {
+    width: 47px;
+  }
 }
 
 header .header-flex .header-nav {
@@ -264,7 +241,6 @@ header .header-flex .header-nav {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  /* top: 70px; */
   top: 50px;
   height: 150px;
   background-color: #fff;
@@ -304,6 +280,7 @@ header .header-flex .header-nav {
             flex-direction: row;
     height: 30px;
     margin-top: 0;
+    opacity: 1;
   }
 }
 
@@ -444,6 +421,174 @@ header .header-flex .hamburger-btn span:nth-child(3) {
 }
 
 .p-mainvisual {
-  padding-top: 100px;
+  padding-top: 72px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-bottom: 150px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  .p-mainvisual {
+    padding-top: 222px;
+  }
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.p-mainvisual .main-img {
+  width: 100%;
+  height: 280px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  .p-mainvisual .main-img {
+    height: 420px;
+  }
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual .main-img {
+    width: 100%;
+  }
+}
+
+.p-mainvisual .main-img .mainimg1 {
+  display: none;
+  position: absolute;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual .main-img .mainimg1 {
+    background-image: url(../img/main1.png);
+    background-repeat: no-repeat;
+    /*  */
+    background-size: cover;
+    background-position: top -40px right -55px;
+    display: block;
+    position: absolute;
+    width: 630px;
+    height: 680px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.p-mainvisual .main-img img {
+  display: block;
+  width: 85%;
+  max-width: 518px;
+  margin: 0 auto;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual .main-img img {
+    height: 420px;
+    margin-right: 0;
+    margin-left: auto;
+    z-index: 10;
+  }
+}
+
+.p-mainvisual .maintext {
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual .maintext {
+    max-width: 380px;
+  }
+}
+
+.p-mainvisual .maintext h1 {
+  line-height: 54px;
+  width: 90%;
+  margin: 0 auto 30px;
+}
+
+.p-mainvisual .maintext p {
+  width: 70%;
+  margin: 0 auto 55px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  .p-mainvisual .maintext p {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.p-mainvisual .maintext .contact-form {
+  background: transparent -webkit-gradient(linear, left top, right top, from(#FA41CC), to(#6020B0)) 0% 0% no-repeat padding-box;
+  background: transparent -webkit-linear-gradient(left, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  height: 37px;
+  width: 155px;
+  margin: 0 auto 50px;
+  font: normal normal normal 14px/19px Hiragino Kaku Gothic ProN;
+  color: #fff;
+  line-height: 37px;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
