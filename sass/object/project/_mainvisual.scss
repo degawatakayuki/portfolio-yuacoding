@@ -2,7 +2,7 @@
     padding-top: 72px;
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 150px;
+    margin-bottom: 73px;
 
     @include breakpoint(tablet) {
         padding-top: 222px;
@@ -15,10 +15,12 @@
 
     .main-img {
         width: 100%;
-        height: 280px;
+        height: auto;
         
         @include breakpoint(tablet) {
-            height: 420px;
+            max-width: 518px;
+            height: auto;
+            margin: 0 auto;
         }
         @include breakpoint(pc) {
             width: 100%;
@@ -48,6 +50,7 @@
             width: 85%;
             max-width: 518px;
             margin: 0 auto;
+            height: auto;
             
             @include breakpoint(pc) {
                 height: 420px;
@@ -60,22 +63,38 @@
 
     .maintext {
 
+        @include breakpoint(tablet) {
+            max-width: 410px;
+            margin: 0 auto;
+        }
+
         @include breakpoint(pc) {
             max-width: 380px;
         }
         
         h1 {
             line-height: 54px;
-            width: 90%;
+            width: 100%;
             margin: 0 auto 30px;
+            text-align: center;
+
+            @include breakpoint(pc) {
+                width: 100%;
+                text-align: left;
+            }
         }
 
         p {
             width: 70%;
-            margin: 0 auto 55px;
+            margin: 0 auto 40px;
+
+            @include breakpoint(tablet) {
+                text-align: center;
+            }
+
             @include breakpoint(pc) {
                 width: 60%;
-                text-align: center;
+                margin: 0 0 55px 0;
             }
         }
 
@@ -85,12 +104,16 @@
             border-radius: 10px;
             height: 37px;
             width: 155px;
-            margin: 0 auto 50px;
+            margin: 0 auto;
 
-            font: normal normal normal 14px/19px Hiragino Kaku Gothic ProN;
+            font: normal normal normal 14px/19px Noto Sans JP;
             color: $white;
             line-height: 37px;
             text-align: center;
+
+            @include breakpoint(pc) {
+                margin: 0 0 10px 0;
+            }
         }
     }
 }
