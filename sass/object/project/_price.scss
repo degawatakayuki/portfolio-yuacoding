@@ -1,0 +1,59 @@
+.p-price {
+    background-color: $bg-color;
+    text-align: center;
+    padding-bottom: 71px;
+    margin-bottom: 73px;
+
+    h2 {
+        padding-top: 64px;
+        margin-bottom: 21px;
+
+        @include breakpoint(pc) {
+            padding-top: 57px;
+        }
+    }
+
+    table {
+        background-color: $white;
+        width: 100%;
+        border: 1px solid #00000029;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        border-collapse:collapse;
+
+        @include breakpoint(pc) {
+            text-align: left;
+        }
+
+        tr {
+            td {
+                border: 1px solid #00000029;
+                padding: 39px 19px;
+            }
+
+            td:first-child {
+                width: 70%;
+
+                @include breakpoint(pc) {
+                    width: 35%;
+                }
+            }
+
+            td:nth-child(2) {
+                width: 30%;
+
+                @include breakpoint(pc) {
+                    width: 65%;
+                }
+            }
+        }
+    }
+
+    .notes {
+        padding-top: 41px;
+
+        @include breakpoint(pc) {
+            display: none;
+        }
+    }
+}
