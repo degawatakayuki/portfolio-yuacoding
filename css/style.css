@@ -918,95 +918,46 @@ header .header-flex .hamburger-btn span:nth-child(3) {
 }
 
 .c-accordion {
-  /* width: 100%;
-    height: auto;
-
-    .menu {
-        padding: 12px 20px;
-        background: #FFFFFF 0% 0% no-repeat padding-box;
-        border: 1px solid #E5E5E5;
-        opacity: 1;
-        cursor: pointer;
-        user-select: none;
-    }
-    .content {
-        display: none;
-        background: #F2F2F2 0% 0% no-repeat padding-box;
-        border: 1px solid #E5E5E5;
-        line-height: 0;
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition-duration: 0.1s;
-    }
-    .content-open {
-        line-height: normal;
-        height: auto;
-        opacity: 1;
-        padding: 12px 20px;
-    } */
-  /* アコーディオン全体 */
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 86px;
+  text-align: center;
   /* アコーディオン */
   /* アコーディオンのタイトル */
-  /* (+)アイコン */
   /* アコーディオンのコンテンツ */
   /* アコーディオンのコンテンツ展開時 */
-  /* アコーディオン展開時の(-)アイコン */
 }
 
 .c-accordion .accordion__item {
-  border: 1px solid #ccc;
-  margin-top: 10px;
+  border: 1px solid #E5E5E5;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-bottom: none;
+}
+
+.c-accordion .accordion__item:last-of-type {
+  border: 1px solid #E5E5E5;
+}
+
+.c-accordion .accordion__title, .c-accordion .accordion__content {
+  padding: 12px 20px;
   cursor: pointer;
 }
 
 .c-accordion .accordion__title {
   position: relative;
-  padding: 15px 60px 15px 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.c-accordion .accordion__title::before,
-.c-accordion .accordion__title::after {
-  content: "";
-  position: absolute;
-  right: 20px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  background-color: #3abec1;
-  width: 20px;
-  height: 4px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.c-accordion .accordion__title::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
 }
 
 .c-accordion .accordion__content {
-  padding: 0 20px 15px 20px;
   display: none;
-  cursor: pointer;
+  background: #F2F2F2 0% 0% no-repeat padding-box;
 }
 
 .c-accordion .accordion__content.is-open {
   display: block;
-}
-
-.c-accordion .accordion__item.is-active .accordion__title::before {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.c-accordion .accordion__item.is-active .accordion__title::after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
