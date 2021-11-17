@@ -23,7 +23,10 @@ li {
         width: 90%;
         max-width: 1022px;
     }
+}
 
+article > * + * {
+    margin: 0;
 }
 
 body {

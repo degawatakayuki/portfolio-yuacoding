@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -124,30 +125,32 @@
                 </div>
             </dl><!-- /.c-accordion -->
         </section><!-- /.p-faq -->
-        <section class="p-blog inner">
-            <h2>ブログ</h2>
-            <p>BLOG</p>
-            <div class="blog-contents">
-                <article>
-                    <img src="img/blog1.png" alt="サイトリニューアル">
-                    <p>サイトをリニューアルオープンしました。</p>
-                    <time>2020.01.23</time>
-                </article>
-                <article>
-                    <img src="img/blog2.png" alt="検証">
-                    <p>WebサイトでSEO内部施策に適したコー ディングでどれぐらいサイトが早くなるの か検証してみました</p>
-                    <time>2020.01.24</time>
-                </article>
-                <article>
-                    <img src="img/blog3.png" alt="募集">
-                    <p>ユアコーディングではデザイナーの方を 広く募集しています。</p>
-                    <time>2020.01.25</time>
-                </article>
-            </div><!-- /.blog-contents -->  
+        <section class="p-blog">
+            <div class="blog-innerblock inner">
+                <h2>ブログ</h2>
+                <p class="c-subtitle">BLOG</p>
+                <div class="blog-contents">
+                    <article>
+                        <img src="img/blog1.png" alt="サイトリニューアル">
+                        <p>サイトをリニューアルオープンしました。</p>
+                        <time>2020.01.23</time>
+                    </article>
+                    <article>
+                        <img src="img/blog2.png" alt="検証">
+                        <p>WebサイトでSEO内部施策に適したコー ディングでどれぐらいサイトが早くなるの か検証してみました</p>
+                        <time>2020.01.24</time>
+                    </article>
+                    <article>
+                        <img src="img/blog3.png" alt="募集">
+                        <p>ユアコーディングではデザイナーの方を 広く募集しています。</p>
+                        <time>2020.01.25</time>
+                    </article>
+                </div><!-- /.blog-contents -->  
+            </div><!-- /.inner -->
         </section><!-- /.p-blog --> 
         <section class="p-works">
             <h2>制作実績</h2>
-            <p>WORKS</p>
+            <p class="c-subtitle">WORKS</p>
             <div class="slider">
                 <article>
                     <img src="img/works2.png" alt="コーディング">
@@ -224,7 +227,9 @@
             <p>©ユアコーディング, All Rights Reserved.</p>
         </footer>
     </main>
+    <script src="js/swiper.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/accodion.js"></script>
+
 </body>
 </html>

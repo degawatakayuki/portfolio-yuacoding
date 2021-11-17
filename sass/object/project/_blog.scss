@@ -1,0 +1,57 @@
+.p-blog {
+    background: #EEFBFB 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: center;
+    padding-bottom: 91px;
+
+    .blog-innerblock {
+        max-width: 1400px;
+        margin: 0 auto;
+        
+        h2 {
+            padding: 64px 0 21px;
+        }
+
+        .blog-contents {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            @include breakpoint(pc) {
+                flex-direction: row;
+            }
+            
+            article {
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 3px 6px #00000029;
+                opacity: 1;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                @include breakpoint(pc) {
+                    width: 30%;
+                    max-width: 380px;
+                }
+
+                img {
+                    width: 100%;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    padding: 0 40px 15px 18px; 
+                    text-align: left;
+                }
+
+                time {
+                    display: block;
+                    text-align: right;
+                    padding: 0 35px 10px;
+                    margin: auto 0 0 0;
+                }
+            }
+        }
+    }
+}
