@@ -5,7 +5,7 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides : true,
     initialSlide: 10,
     autoplay: {
-        delay: 3000,
+        delay: 5000,
     },
 
     spaceBetween: 5,

@@ -424,6 +424,66 @@ header .header-flex .hamburger-btn span:nth-child(3) {
   top: 27px;
 }
 
+footer {
+  padding: 45px 0 49px;
+  text-align: center;
+}
+
+footer .footer-title {
+  font: normal normal bold 24px/28px Noto Sans JP;
+  letter-spacing: 0px;
+  display: none;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  footer .footer-title {
+    display: block;
+  }
+}
+
+footer .corporate {
+  margin: 24px auto 54px;
+  display: none;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  footer .corporate {
+    display: block;
+  }
+}
+
+footer .corporate p {
+  display: inline-block;
+}
+
+footer .corporate p:first-of-type {
+  margin-right: 68px;
+}
+
+footer .copyright {
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  footer .copyright {
+    font-size: 0.9em;
+  }
+}
+
 .p-mainvisual {
   padding-top: 72px;
   display: -webkit-box;
@@ -931,6 +991,106 @@ header .header-flex .hamburger-btn span:nth-child(3) {
   }
 }
 
+.p-contact {
+  background: transparent -webkit-gradient(linear, left top, right top, from(#05A5FA), color-stop(100%, #63FBD7), to(#67FFD6)) 0% 0% no-repeat padding-box;
+  background: transparent -webkit-linear-gradient(left, #05A5FA 0%, #63FBD7 100%, #67FFD6 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #05A5FA 0%, #63FBD7 100%, #67FFD6 100%) 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding-top: 65px;
+  padding-bottom: 70px;
+}
+
+.p-contact .contact-title {
+  color: #fff;
+  text-align: center;
+}
+
+.p-contact .contact-title p:first-of-type {
+  margin: 10px 0 39px;
+}
+
+.p-contact .contact-title p:last-of-type {
+  margin-bottom: 48px;
+}
+
+.p-contact form {
+  background-color: #fff;
+  padding: 36px 10px 35px;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 416px) {
+  .p-contact form {
+    padding: 36px 63px 35px;
+  }
+}
+
+.p-contact form .form-content label, .p-contact form .form-content .form-label {
+  display: inline-block;
+  margin: 29px 0 36px;
+}
+
+.p-contact form .form-content input, .p-contact form .form-content textarea {
+  display: block;
+  background: #EEFBFB 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  border: 1px solid #E5E5E5;
+  width: 100%;
+  /* @if $point == wide {
+		@media ( min-width: 1025px ) {
+			@content ;
+		}
+	} */
+}
+
+@media (min-width: 768px) {
+  .p-contact form .form-content input, .p-contact form .form-content textarea {
+    width: 70%;
+  }
+}
+
+.p-contact form .form-content .form-label {
+  color: #fff;
+  margin-left: 26px;
+  padding: 5px 19px;
+  background: #0C449B 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.p-contact form .form-content input {
+  height: 40px;
+}
+
+.p-contact form .form-content textarea {
+  width: 100%;
+}
+
+.p-contact form label {
+  display: block;
+  margin: 29px auto 31px;
+  text-align: center;
+}
+
+.p-contact form .submit-button {
+  background: transparent -webkit-gradient(linear, left top, right top, from(#FA41CC), to(#6020B0)) 0% 0% no-repeat padding-box;
+  background: transparent -webkit-linear-gradient(left, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+  border: none;
+  padding: 9px 55px 9px 49px;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
 .c-subtitle {
   color: #3BA6C9;
   margin-bottom: 60px;
@@ -988,6 +1148,7 @@ header .header-flex .hamburger-btn span:nth-child(3) {
 }
 
 .c-features-contents .flex-contents img {
+  width: 100%;
   max-width: 380px;
   margin: 0 auto;
   /* @if $point == wide {

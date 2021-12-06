@@ -1,0 +1,75 @@
+.p-contact {
+    background: transparent linear-gradient(90deg, #05A5FA 0%, #63FBD7 100%, #67FFD6 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding-top: 65px;
+    padding-bottom: 70px;
+    
+    .contact-title {
+        color: $white;
+        text-align: center;
+
+        p:first-of-type {
+            margin: 10px 0 39px;
+        }
+        p:last-of-type {
+            margin-bottom: 48px;
+        }
+    }
+
+    form {
+        background-color: $white;
+        padding: 36px 10px 35px;
+
+        @include breakpoint(tablet) {
+            padding: 36px 63px 35px;
+        }
+
+        .form-content {
+            label,.form-label {
+                display: inline-block;
+                margin:29px 0 36px;
+            }
+            input,textarea {
+                display: block;
+                background: #EEFBFB 0% 0% no-repeat padding-box;
+                border-radius: 3px;
+                border: 1px solid #E5E5E5;
+                width: 100%;
+
+                @include breakpoint(pc) {
+                    width: 70%;
+                }
+            }
+            .form-label {
+                color: $white;
+                margin-left: 26px;
+                padding: 5px 19px;
+                background: #0C449B 0% 0% no-repeat padding-box;
+                border-radius: 10px;
+                opacity: 1;
+            }
+            input {
+                height: 40px;
+            }
+            textarea {
+                width: 100%;
+            }
+        }
+        label {
+            display: block;
+            margin: 29px auto 31px;
+            text-align: center;
+        }
+        .submit-button {
+            background: transparent linear-gradient(90deg, #FA41CC 0%, #6020B0 100%) 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 10px;
+            opacity: 1;
+            border: none;
+            padding: 9px 55px 9px 49px;
+            color: $white;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

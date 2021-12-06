@@ -1,0 +1,37 @@
+footer {
+    padding: 45px 0 49px;
+    text-align: center;
+
+    .footer-title {
+        font: normal normal bold 24px/28px Noto Sans JP;
+        letter-spacing: 0px;
+        display: none;
+
+        @include breakpoint(pc) {
+            display: block;
+        }
+    }
+
+    .corporate {
+        margin: 24px auto 54px;
+        display: none;
+
+        @include breakpoint(pc) {
+            display: block;
+        }
+
+        p {
+            display: inline-block;
+
+            &:first-of-type {
+                margin-right: 68px;
+            }
+        }
+    }
+    .copyright {
+
+        @include breakpoint(pc) {
+            font-size: 0.9em;
+        }
+    }
+}
