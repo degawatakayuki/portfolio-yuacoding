@@ -29,11 +29,16 @@ article > * + * {
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font: normal normal bold 16px/28px Noto Sans JP;
     color: $text-maincolor;
     letter-spacing: 0px;
     opacity: 1;
+    
 
     /* @include breakpoint(tablet) {
         font: normal normal bold 16px/28px Noto Sans JP;

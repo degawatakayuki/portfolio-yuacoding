@@ -132,6 +132,10 @@ article > * + * {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: normal normal bold 16px/28px Noto Sans JP;
   color: #333333;
@@ -1083,12 +1087,12 @@ footer .copyright {
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
-  opacity: 1;
   border: none;
   padding: 9px 55px 9px 49px;
   color: #fff;
   display: block;
   margin: 0 auto;
+  opacity: 0.6;
 }
 
 .c-subtitle {

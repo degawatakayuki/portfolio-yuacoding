@@ -87,10 +87,19 @@ accordionsArr.forEach((accordion) => {
   const accordionTriggers = accordion.querySelectorAll(".js-accordion-trigger");
   // TriggerをArrayに変換(IE対策)
   const accordionTriggersArr = Array.prototype.slice.call(accordionTriggers);
-/*  */
+
   accordionTriggersArr.forEach((trigger) => {
     // Triggerにクリックイベントを付与
-    trigger.addEventListener("click", () => {
+    trigger.addEventListener("click", (e) => {
+      accordionTriggersArr.forEach((trigger) => {
+        // クリックしたアコーディオン以外を全て閉じる
+        if (trigger !== e.target.parentElement) {
+          trigger.classList.remove("is-active");
+          const openedContent = trigger.querySelector(".accordion__content");
+          slideUp(openedContent);
+        }
+      });
+
       // '.is-active'クラスを付与or削除
       trigger.classList.toggle("is-active");
       // 開閉させる要素を取得
