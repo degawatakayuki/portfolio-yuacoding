@@ -39,6 +39,9 @@
                 @include breakpoint(pc) {
                     width: 70%;
                 }
+                &.form-err {
+                    border-color: red;
+                }
             }
             .form-label {
                 color: $white;
@@ -70,6 +73,15 @@
             display: block;
             margin: 0 auto;
             opacity: 0.6;
+        }
+        .err-msg-message, .err-msg-mail, .err-msg-name {
+            display: none;
+            color: red;
+            padding-top: 10px;
+
+            &.form-err {
+                display: block;
+            }
         }
     }
 }

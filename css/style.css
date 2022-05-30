@@ -1057,6 +1057,10 @@ footer .copyright {
   }
 }
 
+.p-contact form .form-content input.form-err, .p-contact form .form-content textarea.form-err {
+  border-color: red;
+}
+
 .p-contact form .form-content .form-label {
   color: #fff;
   margin-left: 26px;
@@ -1093,6 +1097,16 @@ footer .copyright {
   display: block;
   margin: 0 auto;
   opacity: 0.6;
+}
+
+.p-contact form .err-msg-message, .p-contact form .err-msg-mail, .p-contact form .err-msg-name {
+  display: none;
+  color: red;
+  padding-top: 10px;
+}
+
+.p-contact form .err-msg-message.form-err, .p-contact form .err-msg-mail.form-err, .p-contact form .err-msg-name.form-err {
+  display: block;
 }
 
 .c-subtitle {
@@ -1293,7 +1307,7 @@ footer .copyright {
 
 .c-accordion .accordion__content {
   display: none;
-  background: #F2F2F2 0% 0% no-repeat padding-box;
+  background: #dddddd 0% 0% no-repeat padding-box;
   /* @if $point == wide {
 		@media ( min-width: 1025px ) {
 			@content ;

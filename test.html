@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name=“robots” content=“noindex”><!-- 完成したら削除 -->
+    <title>ユアコーディング</title>
+</head>
+<body>
+    <main>
+        <div class="form-wrapper">
+            <form
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScs13hXiL53Jj79xUIx9seV_f0uVPa8auPKfeF0fEO3z7YJGQ/formResponse"
+              id="form">
+              <div class="box">
+                <label for="name">お名前</label>
+                <input type="text" name="entry.779967655" id="name" placeholder="お名前" required>
+              </div>
+              <div class="box">
+                <label for="mail">メールアドレス</label>
+                <input type="mail" name="entry.788656485" id="mail" placeholder="メールアドレス" required>
+              </div>
+              <div class="box">
+                <textarea name="entry.2120351758" id="" cols="30" rows="10" placeholder="自由記述"></textarea><!-- /# -->
+              </div>
+              <input type="submit" class="submit-btn">
+            </form>
+            <p class="end-message">お問い合わせありがとうございました</p>
+            <p class="false-message">送信失敗です</p>
+          </div>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </main>
+
+    <script>
+       /*  document.addEventListener("DOMContentLoaded", function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLScs13hXiL53Jj79xUIx9seV_f0uVPa8auPKfeF0fEO3z7YJGQ/viewform");
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+            xhr.onreadystatechange  = function (e) {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                console.log('ok');
+                } else {
+                    console.log('ng');
+                }
+            }
+            };
+            xhr.send('?usp=sf_link');
+        }); */
+        $(document).ready(function () {
+
+$('#form').submit(function (event) {
+  var formData = $('#form').serialize();
+  $.ajax({
+    url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLScs13hXiL53Jj79xUIx9seV_f0uVPa8auPKfeF0fEO3z7YJGQ/formResponse",
+    data: formData,
+    /* type: "POST", */
+    dataType: "jsonp",
+    statusCode: {
+      0: function () {
+        $(".end-message").slideDown();
+        $(".submit-btn").fadeOut();
+        //window.location.href = "thanks.html";
+      },
+      200: function () {
+        $(".false-message").slideDown();/*  */
+      }
+    }
+  });
+  event.preventDefault();
+});
+
+});
+    </script>
+</body>
+</html>

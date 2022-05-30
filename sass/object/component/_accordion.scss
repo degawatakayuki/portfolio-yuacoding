@@ -30,7 +30,8 @@
   /* アコーディオンのコンテンツ */
   .accordion__content {
     display: none;
-    background: #F2F2F2 0% 0% no-repeat padding-box;
+    background: #dddddd 0% 0% no-repeat padding-box;
+    
 
     
     @include breakpoint(tablet) {

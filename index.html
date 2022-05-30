@@ -233,23 +233,30 @@
                         <p>CONTACT</p>
                         <p>コーディングの人出が足りないとき、<br>あなたの力になります</p>
                     </div><!-- /.contact-title -->
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScs13hXiL53Jj79xUIx9seV_f0uVPa8auPKfeF0fEO3z7YJGQ/formResponse" method="post" id="form">
-                        <div class="form-content">
-                            <label for="name">お名前</label><div class="form-label">必須</div><!-- /.form-label -->
-                            <input type="text" id="name" name="entry.779967655" required>
-                        </div>
-                        <div class="form-content">
-                            <label for="mail">メールアドレス</label><div class="form-label">必須</div><!-- /.form-label -->
-                            <input type="mail" id="mail" name="entry.788656485" required>
-                        </div>
-                        <div class="form-content">
-                            <label for="message">お問い合わせ内容</label><div class="form-label">必須</div><!-- /.form-label -->
-                            <textarea name="entry.2120351758" id="message" cols="30" rows="10" required></textarea>
-                        </div>
-                        <label for="check"><input type="checkbox" name="check" required>プライバシーポリシーに同意する</label>
-                        <input class="submit-button" type="submit" value="送信する" disabled id="form-button">
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdXY820_EkIL5lS1e9YULCVPdRRMkGw7pIVWKWbTug6TNX_Xg/formResponse" method="post" id="form"  target="dummyIframe">
+                        <div id="form-contents">
+                            <div class="form-content">
+                                <label for="name">お名前</label><div class="form-label">必須</div><!-- /.form-label -->
+                                <input type="text" id="name" name="entry.232620821" required>
+                                <p class="err-msg-name"></p><!-- /.err-msg-name -->
+                            </div>
+                            <div class="form-content">
+                                <label for="mail">メールアドレス</label><div class="form-label">必須</div><!-- /.form-label -->
+                                <input type="mail" id="mail" name="entry.1986167770" required>
+                                <p class="err-msg-mail"></p><!-- /.err-msg-pass -->
+                            </div>
+                            <div class="form-content">
+                                <label for="message">お問い合わせ内容</label><div class="form-label">必須</div><!-- /.form-label -->
+                                <textarea name="entry.854659717" id="message" cols="30" rows="10" required></textarea>
+                                <p class="err-msg-message"></p><!-- /.err-msg-message -->
+                            </div>
+                            <label for="check"><input type="checkbox" name="check" required>プライバシーポリシーに同意する</label>
+                            <input class="submit-button" type="submit" value="送信する" id="form-button">
+                        </div><!-- /.form-contents -->
+                        <iframe name="dummyIframe" style="display:none;"></iframe>
+                        <div id="thxMessage" style="display:none;">お問い合わせありがとうございました。</div>
                     </form>
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='./complate.php';}"></iframe>
+                   
                 </div><!-- /.inner -->
             </section><!-- /.contact -->
         </div>
@@ -268,6 +275,116 @@
     <script src="js/my-swiper.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/my-aos.js"></script>
-    <script src="js/my-form.js"></script>
+    <!-- <script src="js/my-form.js"></script> -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // 「送信」ボタンの要素を取得
+            const submit = document.getElementById("form-button");
+            submit.disabled = true;
+            // 「送信」ボタンの要素にクリックイベントを設定する
+
+            /* 変数指定 */
+            const form = document.getElementById("form");
+           /*  const form_button = document.getElementById("form-button"); */
+
+            /* テキスト変更・チェックが更新された時のイベント処理*/
+            form.addEventListener("input", update);
+            form.addEventListener("change", update);
+
+            /* フォームの必須項目が入力されているか確認 */
+            function update() {
+                const isRequired = form.checkValidity();
+
+                /* チェックが入っている場合ボタンを有効 */
+                if (isRequired) {
+                    submit.disabled = false;
+                    submit.style.opacity = 1;
+                    submit.style.cursor = "pointer";      
+                } else {
+                    submit.disabled = true;
+                    submit.style.opacity = 0.6;
+                    submit.style.cursor = "default";     
+                }
+            }
+
+            submit.addEventListener('click', (e) => {
+                // デフォルトアクションをキャンセル
+                e.preventDefault();
+                console.log('ok');
+
+
+                
+                // フォームの要素を取得
+                const name = document.querySelector('#name');
+                const mail = document.querySelector('#mail');
+                const message = document.querySelector('#message');
+                /*メールアドレスのパターン 正規表現*/
+                var pattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+                var form_flg = true;
+                // エラーメッセージを表示させる要素を取得
+                const errMsgName = document.querySelector('.err-msg-name');
+                const errMsgMail = document.querySelector('.err-msg-mail');
+                const errMsgMessage = document.querySelector('.err-msg-message');
+                // 「お名前」入力欄の空欄チェック
+                if(!name.value){
+                    // クラスを追加(エラーメッセージを表示する)
+                    errMsgName.classList.add('form-err');
+                    // エラーメッセージのテキスト
+                    errMsgName.textContent = 'お名前が入力されていません';
+                    // クラスを追加(フォームの枠線を赤くする)
+                    name.classList.add('form-err');
+                    form_flg = false;
+                } else {
+                    errMsgName.textContent ='';
+                    name.classList.remove('form-err');
+                    errMsgName.classList.remove('form-err');
+                    form_flg = true;
+                }
+                // 「メールアドレス」入力欄の空欄チェック
+                if(!mail.value.match(pattern)){
+                    // クラスを追加(エラーメッセージを表示する)
+                    errMsgMail.classList.add('form-err');
+                    // エラーメッセージのテキスト
+                    errMsgMail.textContent = 'メールアドレス形式で入力されていません';
+                    // クラスを追加(フォームの枠線を赤くする)
+                    mail.classList.add('form-err');
+                    form_flg = false;
+                }else {
+                    errMsgMail.textContent ='';
+                    mail.classList.remove('form-err');
+                    errMsgMail.classList.remove('form-err');
+                    form_flg = true;
+                }
+                // 「メールアドレス」入力欄の空欄チェック
+                if(!message.value) {
+                    // クラスを追加(エラーメッセージを表示する)
+                    errMsgMessage.classList.add('form-err');
+                    // エラーメッセージのテキスト
+                    errMsgMessage.textContent = 'お問い合わせ内容が入力されていません';
+                    // クラスを追加(フォームの枠線を赤くする)
+                    message.classList.add('form-err');
+                    // 後続の処理を止める
+                    form_flg = false;
+                }else {
+                    errMsgMessage.textContent ='';
+                    message.classList.remove('form-err');
+                    errMsgMessage.classList.remove('form-err');
+                    form_flg = true;
+                }
+                if(form_flg) {
+                    document.getElementById('form-contents').style.display = 'none';
+                    document.getElementById('thxMessage').style.display = 'block';
+                }
+            }, false);
+        }, false); 
+        /* document.getElementById("form-button").onclick = function() {
+            let name = document.getElementById('name').value;
+            let mail = document.getElementById('mail').value;
+            let message = document.getElementById('message').value;
+            
+           document.getElementById('form-contents').style.display = 'none';
+           document.getElementById('thxMessage').style.display = 'block';
+        }; */
+    </script>
 </body>
 </html>
