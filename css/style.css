@@ -1109,6 +1109,10 @@ footer .copyright {
   display: block;
 }
 
+.p-contact #thxMessage {
+  text-align: center;
+}
+
 .c-subtitle {
   color: #3BA6C9;
   margin-bottom: 60px;
